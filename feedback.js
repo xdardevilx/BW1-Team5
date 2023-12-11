@@ -24,6 +24,7 @@ const envoyedText = function () {
     alert("Il tuo parere è stato inviato");
     const textValue = document.getElementsByTagName("textarea")[0].value;
     console.log(textValue);
+    form.reset();
   });
 };
 envoyedText();
