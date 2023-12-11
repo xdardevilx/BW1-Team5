@@ -1,0 +1,12 @@
+#logo {
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 80px;
+}
+#conteggio-domande {
+  text-align: center;
+  color: white;
+}
+#num-domande {
+  color: #d20094;
+}
