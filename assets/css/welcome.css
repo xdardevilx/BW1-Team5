@@ -1,13 +1,5 @@
 <<<<<<< Updated upstream
 =======
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
-
-body {
-    width: 1200px;
-    margin-left: auto;
-    margin-right:auto;
-    background-image:url(../img/bg.jpg) ;
-}
 
 #logo {
     /* width: 15%;
@@ -17,11 +9,7 @@ body {
   margin-top: 40px;
 }
 
-h1 {
-    font-size: 60px;
-    color: white;
-    font-family: 'Outfit';
-}
+
 
 #exam {
     font-weight: bold;
