@@ -93,3 +93,27 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+
+const domandeContainer = document.getElementById("domande");
+const risposteContainer = document.getElementById("risposte");
+const conteggioDomande = document.getElementById("cont-domande");
+const risposteGiuste = [];
+const risposteErrate = [];
+
+let domandaCorrente = 0;
+const domanda = function () {
+  const domandElement = document.createElement("p");
+  if (domandaCorrente < questions.length) {
+    domandElement.innerText = questions[domandaCorrente].question;
+    domandeContainer.innerHTML = "";
+    domandeContainer.appendChild(domandElement);
+  } else {
+    domandeContainer.innerHTML = "hai completato tutte le domande";
+    domandeContainer.appendChild(domandElement);
+  }
+};
+const mostraProssimaDomanda = function () {
+  domandaCorrente++;
+  domanda();
+};
+domanda();
