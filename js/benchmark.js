@@ -99,20 +99,22 @@ const risposteContainer = document.getElementById("risposte");
 const conteggioDomande = document.getElementById("cont-domande");
 const risposteGiuste = [];
 const risposteErrate = [];
-
 let domandaCorrente = 0;
+numeriDomande = 1;
 const domanda = function () {
   const domandElement = document.createElement("p");
   if (domandaCorrente < questions.length) {
     domandElement.innerText = questions[domandaCorrente].question;
     domandeContainer.innerHTML = "";
     domandeContainer.appendChild(domandElement);
+    conteggioDomande.innerHTML = numeriDomande;
   } else {
     domandeContainer.innerHTML = "hai completato tutte le domande";
     domandeContainer.appendChild(domandElement);
   }
 };
 const mostraProssimaDomanda = function () {
+  numeriDomande++;
   domandaCorrente++;
   domanda();
 };
