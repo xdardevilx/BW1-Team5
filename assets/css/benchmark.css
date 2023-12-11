@@ -74,9 +74,8 @@ html {
 .btn-primary {
   color: black;
   background-color: #00ffff;
-  box-shadow: 5px 5px 3px #00ffff, -5px -5px 3px #00ffff, 5px -5px 3px #00ffff,
-    -5px 5px 3px #00ffff;
-  border: 1px solid #00ffff;
+  box-shadow: 2px 2px 19px 6px #00ffff;
+  border: none;
   margin: 20px;
   padding-left: 30px;
   padding-right: 30px;
