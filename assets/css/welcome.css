@@ -21,8 +21,9 @@ h1 {
   font-family: "Outfit";
 }
 
-#exam {
+#exam { 
   font-weight: bold;
+  /* font-family: 'Courier New', Courier, monospace; */
 }
 
 .container1 {
