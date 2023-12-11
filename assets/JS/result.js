@@ -18,7 +18,7 @@ const risultatoTest = function () {
   }
 };
 
-const conteggioRispostePercentuale = function () {
+const conteggioRisposte = function () {
   const risposteEsattePercentuale = risposteCorrette.length * 10;
   const risposteErratePercentuale = risposteErrate.lenght * 10;
   const percentualeCorrette = document.getElementById("correct");
