@@ -1,0 +1,89 @@
+<<<<<<< Updated upstream
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap');
+
+body {
+    width: 1200px;
+    margin-left: auto;
+    margin-right:auto;
+    background-image:url(../img/bg.jpg) ;
+}
+
+#logo {
+    /* width: 15%;
+  margin-top: 40px;
+  margin-left: 95px; */
+  width: 150px;
+  margin-top: 40px;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    font-family: 'Outfit';
+}
+
+#exam {
+    font-weight: bold;
+}
+
+.container1 {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+#titolo2 {
+    font-size: 30px;
+    color: #900080;
+    font-family: 'Outfit'
+}
+
+#paragrafo1 {
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter';
+    padding-bottom: 30px;
+}
+
+.container2 {
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter';
+    padding-bottom: 50px;
+}
+
+strong {
+    font-size: 1.025em;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.container3 {
+    color: white;
+    font-family: 'Inter';
+    font-size: 14px;
+    display: inline;
+    padding-right: 100px;
+}
+
+button {
+    background-color: #00ffff;
+    padding: 10px;
+    box-shadow: 0px 0px 15px 2px #00ffff;
+    width: 100px;
+    height: 40px;
+    border-color: #00ffff;
+
+
+}
+
+#grassetto {
+    font-size: 1.1em;
+    font-weight: 700;
+    font-family: 'Inter';
+ 
+
+}
+>>>>>>> Stashed changes
