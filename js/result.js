@@ -1,5 +1,5 @@
-const risposteCorrette = [1, 1, 1, 1, 1, 1];
-const risposteErrate = [1, 1, 1, 1];
+const risposteCorrette = [1, 1, 1, 1, 1];
+const risposteErrate = [1, 1, 1, 1, 1];
 
 const risultatoTest = function () {
   const h3Circle1 = document.getElementById("h3Cirle1");
@@ -18,27 +18,42 @@ const risultatoTest = function () {
   }
 };
 
+risultatoTest();
+
 const conteggioRisposte = function () {
   const risposteEsattePercentuale = risposteCorrette.length * 10;
-  const risposteErratePercentuale = risposteErrate.lenght * 10;
+  const risposteErratePercentuale = risposteErrate.length * 10;
   const percentualeCorrette = document.getElementById("correct");
   const percentualeErrate = document.getElementById("wrong");
   percentualeCorrette.innerText = `${risposteEsattePercentuale} %`;
   percentualeErrate.innerText = `${risposteErratePercentuale} %`;
-};
+  const canvas = document.getElementById("graficoCiambella");
 
-const canvas = document.getElementById("graficoCiambella");
+  let etichette = ["corrette", "errate"];
+  let data = [risposteErratePercentuale / 10, risposteEsattePercentuale / 10];
+  let option = {};
 
-let grafico = {
-  labels: ["corrette", "errate"],
-  datasets: [
-    {
-      data: [risposteCorrette.lenght, risposteErrate.lenght],
-      backgroundColor: ["#00FFFF", "#D20094-#900080"],
+  let color = ["#900080", "#00FFFF"];
+  let ciambella = new Chart(canvas, {
+    type: "doughnut",
+
+    data: {
+      labels: etichette,
+
+      datasets: [
+        {
+          backgroundColor: color,
+          radius: "90%",
+          data: data,
+        },
+      ],
     },
-  ],
+
+    options: {
+      cutoutPercentage: 50, // Imposta la percentuale di spessore tagliato
+    },
+  });
+  return ciambella;
 };
-let ciambella = new Chart(canvas, {
-  type: "donut",
-  data: "grafico",
-});
+
+conteggioRisposte();

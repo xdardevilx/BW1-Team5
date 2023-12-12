@@ -1,3 +1,7 @@
+body{
+    width: 100vw;
+}
+
 #logoimg{
     width: 200px;
     margin-left: 150px;
@@ -25,7 +29,11 @@
 text-align: center;
 margin-top: 20px;
 }
+#stars :hover{
+    color: #00FFFF;
+    opacity: 1;
 
+}
 .star{
     display: inline-block;
 }

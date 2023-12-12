@@ -1,5 +1,6 @@
 const clickedStar = function () {
   const stars = document.querySelectorAll(".star i");
+  const starsClicked = document.getElementsByClassName("clicked");
 
   for (let i = 0; i < stars.length; i++) {
     stars[i].addEventListener("click", function () {
@@ -9,8 +10,8 @@ const clickedStar = function () {
       // Rimuovo la classe 'clicked' dalle stelle successive a quella cliccata
       for (let k = i + 1; k < stars.length; k++) {
         stars[k].classList.remove("clicked");
-        console.log("fatto");
       }
+      console.log("Hai ricevuto ", starsClicked.length, "stelle");
     });
   }
 };
