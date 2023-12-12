@@ -60,7 +60,7 @@ footer {
 }
 button {
   border-color: white;
-  background-color: blueviolet;
+  background: none;
   height: 70px;
   width: 250px;
 }
