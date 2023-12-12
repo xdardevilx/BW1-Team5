@@ -94,15 +94,16 @@ const questions = [
   },
 ];
 
-const domandeContainer = document.getElementById("domande");
-const risposteContainer = document.getElementById("risposte");
 const indiceDomanda = document.getElementById("indice-domanda");
 const totDomande = document.getElementById("num-domande");
 
 let domandaCorrente = 0;
 
+const risposteSelezionate = [];
 // funzione crea domande
 const mostraDomanda = function (idDomanda, listaDomande) {
+  const domandeContainer = document.getElementById("domande");
+
   const paragrafoDomanda = document.createElement("p");
   domandeContainer.innerHTML = "";
 
@@ -123,13 +124,14 @@ const contatoreIndiceDomanda = function (idDomanda, listaDomande) {
 };
 
 const creaRadioButton = function (risposta) {
+  const risposteContainer = document.getElementById("risposte");
   const label = document.createElement("label");
   label.classList.add("custom-radio");
 
   const radioButton = document.createElement("input");
   radioButton.type = "radio";
   radioButton.name = "rb";
-  radioButton.value = "risp";
+  radioButton.value = risposta;
 
   const divRadioButton = document.createElement("div");
   divRadioButton.classList.add("radio-button");
@@ -145,6 +147,7 @@ const creaRadioButton = function (risposta) {
 };
 
 const pulisciRisposteContainer = function () {
+  const risposteContainer = document.getElementById("risposte");
   while (risposteContainer.firstChild) {
     risposteContainer.removeChild(risposteContainer.firstChild);
   }
@@ -166,10 +169,45 @@ const mostraRisposte = function (idDomanda, listaDomande) {
 };
 
 const mostraProssimaDomanda = function () {
+  if (domandaCorrente < questions.length) {
+    prendiValoreRadioButton(domandaCorrente);
+    mostraDomanda(domandaCorrente, questions);
+    contatoreIndiceDomanda(domandaCorrente, questions);
+    mostraRisposte(domandaCorrente, questions);
+  } else if (domandaCorrente === questions.length) {
+    mostraDomanda(domandaCorrente, questions);
+
+    console.log(risultati(questions));
+  }
   domandaCorrente++;
-  mostraDomanda(domandaCorrente, questions);
-  contatoreIndiceDomanda(domandaCorrente, questions);
-  mostraRisposte(domandaCorrente, questions);
+};
+
+const prendiValoreRadioButton = function (idDomanda) {
+  let r = {};
+  let inputRadio = document.querySelectorAll('input[name="rb"]:checked');
+
+  r.idDomanda = idDomanda;
+  if (inputRadio.length > 0) {
+    inputRadio.forEach((e) => {
+      r.rispostaData = e.value;
+    });
+  } else {
+    r.rispostaData = null;
+  }
+
+  console.log(r);
+  risposteSelezionate.push(r);
+  console.log(risposteSelezionate);
+};
+
+const risultati = function (listaDomande) {
+  let punti = 0;
+  risposteSelezionate.forEach((e) => {
+    if (e.rispostaData === listaDomande[e.idDomanda].correct_answer) {
+      punti++;
+    }
+  });
+  return punti;
 };
 
 // init
