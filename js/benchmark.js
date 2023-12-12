@@ -96,46 +96,85 @@ const questions = [
 
 const domandeContainer = document.getElementById("domande");
 const risposteContainer = document.getElementById("risposte");
-const conteggioDomande = document.getElementById("cont-domande");
-const radioLabel = document.querySelector(".radio-button");
-const radioLabels = document.querySelectorAll(".radio-label");
-const risposteGiuste = [];
-const risposteErrate = [];
+
+const indiceDomanda = document.getElementById("indice-domanda");
+const totDomande = document.getElementById("num-domande");
+
+// const radioButton = document.querySelector(".radio-button");
+// const radioLabels = document.querySelectorAll(".radio-label");
+
+// const risposteGiuste = [];
+// const risposteErrate = [];
+
 let domandaCorrente = 0;
-let numeriDomande = 1;
 
-const radioButton=function(){}
+// funzione crea domande
+const mostraDomanda = function (idDomanda, listaDomande) {
+  const paragrafoDomanda = document.createElement("p");
+  domandeContainer.innerHTML = "";
 
-// funzione crea domande e risposte
-const domanda = function () {
-  const domandElement = document.createElement("p");
-  if (domandaCorrente < questions.length) {
-    domandElement.innerText = questions[domandaCorrente].question;
-    domandeContainer.innerHTML = "";
-    domandeContainer.appendChild(domandElement);
-    conteggioDomande.innerHTML = numeriDomande;
-    const currentQuestion = questions[domandaCorrente];
-
-    // radioLabels.forEach((label, index) => {
-    //   label.textContent = currentQuestion.incorrect_answers[index];
-    // });
-
-    // Aggiungi anche l'opzione corretta
-    // radioLabels[currentQuestion.incorrect_answers.length].textContent =
-    //   currentQuestion.correct_answer;
+  if (idDomanda < listaDomande.length) {
+    paragrafoDomanda.innerText = listaDomande[idDomanda].question;
+    domandeContainer.appendChild(paragrafoDomanda);
   } else {
     domandeContainer.innerHTML = "hai completato tutte le domande";
-    domandeContainer.appendChild(domandElement);
+    domandeContainer.appendChild(paragrafoDomanda);
   }
 };
 
-const mostraRisposte = function () {};
-mostraRisposte();
-
-const mostraProssimaDomanda = function () {
-  numeriDomande++;
-  domandaCorrente++;
-  domanda();
+const contatoreIndiceDomanda = function (idDomanda, listaDomande) {
+  totDomande.innerHTML = "/" + listaDomande.length;
+  if (idDomanda < listaDomande.length) {
+    indiceDomanda.innerHTML = idDomanda + 1;
+  }
 };
 
-domanda();
+const creaRadioButton = function (risposta) {
+  const label = document.createElement("label");
+  label.classList.add("custom-radio");
+
+  const radioButton = document.createElement("input");
+  radioButton.type = "radio";
+  radioButton.name = "rb";
+  radioButton.value = "risp";
+
+  const divRadioButton = document.createElement("div");
+  divRadioButton.classList.add("radio-button");
+
+  const span = document.createElement("span");
+  span.classList.add("radio-label");
+  span.innerHTML = risposta;
+
+  risposteContainer.appendChild(label);
+  label.appendChild(radioButton);
+  label.appendChild(divRadioButton);
+  label.appendChild(span);
+};
+
+const mostraRisposte = function (idDomanda, listaDomande) {
+  const totRisposte = [];
+  const resp = listaDomande[idDomanda].correct_answer;
+  totRisposte.push(resp);
+  totRisposte.forEach((e) => {
+    creaRadioButton(e);
+  });
+  // const currentQuestion = questions[domandaCorrente];
+  // radioLabels.forEach((label, index) => {
+  //   label.textContent = currentQuestion.incorrect_answers[index];
+  // });
+  // Aggiungi anche l'opzione corretta
+  // radioLabels[currentQuestion.incorrect_answers.length].textContent =
+  //   currentQuestion.correct_answer;
+};
+
+const mostraProssimaDomanda = function () {
+  domandaCorrente++;
+  mostraDomanda(domandaCorrente, questions);
+  contatoreIndiceDomanda(domandaCorrente, questions);
+  mostraRisposte(domandaCorrente, questions);
+};
+
+// init
+mostraDomanda(domandaCorrente, questions);
+contatoreIndiceDomanda(domandaCorrente, questions);
+mostraRisposte(domandaCorrente, questions);
