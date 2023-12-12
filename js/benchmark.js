@@ -96,15 +96,8 @@ const questions = [
 
 const domandeContainer = document.getElementById("domande");
 const risposteContainer = document.getElementById("risposte");
-
 const indiceDomanda = document.getElementById("indice-domanda");
 const totDomande = document.getElementById("num-domande");
-
-// const radioButton = document.querySelector(".radio-button");
-// const radioLabels = document.querySelectorAll(".radio-label");
-
-// const risposteGiuste = [];
-// const risposteErrate = [];
 
 let domandaCorrente = 0;
 
@@ -151,20 +144,25 @@ const creaRadioButton = function (risposta) {
   label.appendChild(span);
 };
 
+const pulisciRisposteContainer = function () {
+  while (risposteContainer.firstChild) {
+    risposteContainer.removeChild(risposteContainer.firstChild);
+  }
+};
+
 const mostraRisposte = function (idDomanda, listaDomande) {
-  const totRisposte = [];
-  const resp = listaDomande[idDomanda].correct_answer;
-  totRisposte.push(resp);
-  totRisposte.forEach((e) => {
-    creaRadioButton(e);
-  });
-  // const currentQuestion = questions[domandaCorrente];
-  // radioLabels.forEach((label, index) => {
-  //   label.textContent = currentQuestion.incorrect_answers[index];
-  // });
-  // Aggiungi anche l'opzione corretta
-  // radioLabels[currentQuestion.incorrect_answers.length].textContent =
-  //   currentQuestion.correct_answer;
+  let totRisposte = [];
+  pulisciRisposteContainer();
+  if (idDomanda < listaDomande.length) {
+    const resp = listaDomande[idDomanda].correct_answer;
+    totRisposte.push(resp);
+
+    totRisposte = totRisposte.concat(listaDomande[idDomanda].incorrect_answers);
+
+    totRisposte.forEach((e) => {
+      creaRadioButton(e);
+    });
+  }
 };
 
 const mostraProssimaDomanda = function () {
