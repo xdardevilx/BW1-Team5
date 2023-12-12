@@ -104,6 +104,7 @@ const risposteErrate = [];
 let domandaCorrente = 0;
 numeriDomande = 1;
 
+const radioButton=function(){}
 
 // funzione crea domande e risposte
 const domanda = function () {
