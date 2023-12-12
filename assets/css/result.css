@@ -1,6 +1,7 @@
 body {
-  color: white;
+  color: rgb(211, 230, 220);
   font-family: "Outfit", sans-serif;
+  font-size: 2em;
 }
 .center {
   text-align: center;
@@ -21,11 +22,28 @@ section {
 }
 
 #circleDiv {
-  display: inline-block;
-  background-color: white;
+  background-color: rgb(101, 208, 119);
   border-radius: 50%;
   width: 20%;
   height: 280px;
+}
+#h3Circle1 {
+  display: flex;
+}
+#h3Circle2 {
+  display: flex;
+}
+#pCircle {
+  display: flex;
+}
+#correct {
+}
+#correctQuestions {
+}
+#wrong {
+  padding-left: 1.2em;
+}
+#wrongQuestions {
 }
 
 .dimension {
@@ -45,4 +63,9 @@ button {
   background-color: blueviolet;
   height: 70px;
   width: 250px;
+}
+canvas {
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
 }
