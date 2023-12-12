@@ -102,7 +102,7 @@ const radioLabels = document.querySelectorAll(".radio-label");
 const risposteGiuste = [];
 const risposteErrate = [];
 let domandaCorrente = 0;
-numeriDomande = 1;
+let numeriDomande = 1;
 
 const radioButton=function(){}
 
@@ -116,13 +116,13 @@ const domanda = function () {
     conteggioDomande.innerHTML = numeriDomande;
     const currentQuestion = questions[domandaCorrente];
 
-    radioLabels.forEach((label, index) => {
-      label.textContent = currentQuestion.incorrect_answers[index];
-    });
+    // radioLabels.forEach((label, index) => {
+    //   label.textContent = currentQuestion.incorrect_answers[index];
+    // });
 
     // Aggiungi anche l'opzione corretta
-    radioLabels[currentQuestion.incorrect_answers.length].textContent =
-      currentQuestion.correct_answer;
+    // radioLabels[currentQuestion.incorrect_answers.length].textContent =
+    //   currentQuestion.correct_answer;
   } else {
     domandeContainer.innerHTML = "hai completato tutte le domande";
     domandeContainer.appendChild(domandElement);

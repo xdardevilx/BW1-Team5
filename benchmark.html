@@ -55,7 +55,9 @@
             </label>
           </div> -->
           <div>
-            <button class="btn-primary">PROCEDI</button>
+            <button class="btn-primary" onclick="mostraProssimaDomanda()">
+              PROCEDI
+            </button>
           </div>
         </article>
         <article id="conteggio-domande">
@@ -65,20 +67,10 @@
           </h4>
         </article>
       </section>
-      <script>
-        const countdownDate = new Date().getTime() + 30000;
-        const x = setInterval(function () {
-          const now = new Date().getTime();
-          const distance = countdownDate - now;
-          const seconds = Math.floor(distance / 1000);
-          document.getElementById("seconds").innerHTML = seconds;
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("seconds").innerHTML = "0";
-          }
-        }, 1000);
-      </script>
     </main>
     <footer></footer>
+    <!-- SCRIPT -->
+    <script src="./js/benchmark.js"></script>
+    <!-- <script src="./js/time.js"></script> -->
   </body>
 </html>
