@@ -90,7 +90,7 @@ textarea::placeholder {
 #button{
     width: 20%;
     height: 80px;
-text-align: center;
+    text-align: center;
     margin-top: 100px;
     font-weight: 700;
     font-family: "Inter", sans-serif;
@@ -98,6 +98,7 @@ text-align: center;
     background-color: #00FFFF;
     box-shadow: 2px 2px 19px 6px #00FFFF;
     border: none;
+    cursor: pointer;
       
 }
 #buttonDiv{

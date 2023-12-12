@@ -13,6 +13,14 @@ const clickedStar = function () {
       }
       console.log("Hai ricevuto ", starsClicked.length, "stelle");
     });
+    stars[i].addEventListener("mouseenter", function () {
+      for (let j = 0; j < stars.length; j++) {
+        stars[j].classList.add("clicked");
+      }
+      for (let k = i; k < stars.length; k++) {
+        stars[k].classList.remove("clicked");
+      }
+    });
   }
 };
 
