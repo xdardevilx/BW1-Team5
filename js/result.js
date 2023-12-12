@@ -26,3 +26,19 @@ const conteggioRisposte = function () {
   percentualeCorrette.innerText = `${risposteEsattePercentuale} %`;
   percentualeErrate.innerText = `${risposteErratePercentuale} %`;
 };
+
+const canvas = document.getElementById("graficoCiambella");
+
+let grafico = {
+  labels: ["corrette", "errate"],
+  datasets: [
+    {
+      data: [risposteCorrette.lenght, risposteErrate.lenght],
+      backgroundColor: ["#00FFFF", "#D20094-#900080"],
+    },
+  ],
+};
+let ciambella = new Chart(canvas, {
+  type: "donut",
+  data: "grafico",
+});
