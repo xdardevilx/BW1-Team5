@@ -19,11 +19,16 @@ clickedStar();
 
 const envoyedText = function () {
   const form = document.getElementById("form");
+  const stars = document.querySelectorAll(".star i");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Il tuo parere è stato inviato");
     const textValue = document.getElementsByTagName("textarea")[0].value;
     console.log(textValue);
+    for (let i = 0; i < stars.length; i++) {
+      stars[i].classList.remove("clicked");
+    }
+    form.reset();
   });
 };
 envoyedText();
