@@ -97,10 +97,15 @@ const questions = [
 const domandeContainer = document.getElementById("domande");
 const risposteContainer = document.getElementById("risposte");
 const conteggioDomande = document.getElementById("cont-domande");
+const radioLabel = document.querySelector(".radio-button");
+const radioLabels = document.querySelectorAll(".radio-label");
 const risposteGiuste = [];
 const risposteErrate = [];
 let domandaCorrente = 0;
 numeriDomande = 1;
+
+
+// funzione crea domande e risposte
 const domanda = function () {
   const domandElement = document.createElement("p");
   if (domandaCorrente < questions.length) {
@@ -108,14 +113,28 @@ const domanda = function () {
     domandeContainer.innerHTML = "";
     domandeContainer.appendChild(domandElement);
     conteggioDomande.innerHTML = numeriDomande;
+    const currentQuestion = questions[domandaCorrente];
+
+    radioLabels.forEach((label, index) => {
+      label.textContent = currentQuestion.incorrect_answers[index];
+    });
+
+    // Aggiungi anche l'opzione corretta
+    radioLabels[currentQuestion.incorrect_answers.length].textContent =
+      currentQuestion.correct_answer;
   } else {
     domandeContainer.innerHTML = "hai completato tutte le domande";
     domandeContainer.appendChild(domandElement);
   }
 };
+
+const mostraRisposte = function () {};
+mostraRisposte();
+
 const mostraProssimaDomanda = function () {
   numeriDomande++;
   domandaCorrente++;
   domanda();
 };
+
 domanda();
