@@ -94,9 +94,6 @@ const questions = [
   },
 ];
 
-const indiceDomanda = document.getElementById("indice-domanda");
-const totDomande = document.getElementById("num-domande");
-
 let domandaCorrente = 0;
 
 const risposteSelezionate = [];
@@ -117,6 +114,9 @@ const mostraDomanda = function (idDomanda, listaDomande) {
 };
 
 const contatoreIndiceDomanda = function (idDomanda, listaDomande) {
+  const indiceDomanda = document.getElementById("indice-domanda");
+  const totDomande = document.getElementById("num-domande");
+
   totDomande.innerHTML = "/" + listaDomande.length;
   if (idDomanda < listaDomande.length) {
     indiceDomanda.innerHTML = idDomanda + 1;
@@ -175,7 +175,8 @@ const mostraProssimaDomanda = function () {
     contatoreIndiceDomanda(domandaCorrente, questions);
     mostraRisposte(domandaCorrente, questions);
   } else if (domandaCorrente === questions.length) {
-    mostraDomanda(domandaCorrente, questions);
+    // mostraDomanda(domandaCorrente, questions);
+    navigazioneInResultPagina();
 
     console.log(risultati(questions));
   }
@@ -210,6 +211,10 @@ const risultati = function (listaDomande) {
   return punti;
 };
 
+const navigazioneInResultPagina = function () {
+  let parametro = risultati(questions);
+  window.location.href = "./result.html" + "?risultati=" + parametro;
+};
 // init
 mostraDomanda(domandaCorrente, questions);
 contatoreIndiceDomanda(domandaCorrente, questions);
