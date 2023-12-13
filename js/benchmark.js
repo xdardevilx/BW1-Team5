@@ -170,7 +170,6 @@ const mostraRisposte = function (idDomanda, listaDomande) {
 
 const mostraProssimaDomanda = function () {
   domandaCorrente++;
-  contaTempo();
   if (domandaCorrente < questions.length) {
     prendiValoreRadioButton(domandaCorrente);
     mostraDomanda(domandaCorrente, questions);
@@ -204,17 +203,25 @@ const prendiValoreRadioButton = function (idDomanda) {
 
 const risultati = function (listaDomande) {
   let punti = 0;
+  const totalePuntiDomande = {};
   risposteSelezionate.forEach((e) => {
     if (e.rispostaData === listaDomande[e.idDomanda].correct_answer) {
       punti++;
     }
   });
-  return punti;
+  totalePuntiDomande.punti = punti;
+  totalePuntiDomande.numeroDomande = listaDomande.length;
+  return totalePuntiDomande;
 };
 
 const navigazioneInResultPagina = function () {
   let parametro = risultati(questions);
-  window.location.href = "./result.html" + "?risultati=" + parametro;
+  window.location.href =
+    "./result.html" +
+    "?risultati=" +
+    parametro.punti +
+    "?totaleDomande=" +
+    parametro.numeroDomande;
 };
 
 // init
