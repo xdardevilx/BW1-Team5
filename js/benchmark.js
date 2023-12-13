@@ -169,6 +169,8 @@ const mostraRisposte = function (idDomanda, listaDomande) {
 };
 
 const mostraProssimaDomanda = function () {
+  domandaCorrente++;
+  contaTempo();
   if (domandaCorrente < questions.length) {
     prendiValoreRadioButton(domandaCorrente);
     mostraDomanda(domandaCorrente, questions);
@@ -180,7 +182,6 @@ const mostraProssimaDomanda = function () {
 
     console.log(risultati(questions));
   }
-  domandaCorrente++;
 };
 
 const prendiValoreRadioButton = function (idDomanda) {
@@ -215,6 +216,7 @@ const navigazioneInResultPagina = function () {
   let parametro = risultati(questions);
   window.location.href = "./result.html" + "?risultati=" + parametro;
 };
+
 // init
 mostraDomanda(domandaCorrente, questions);
 contatoreIndiceDomanda(domandaCorrente, questions);
