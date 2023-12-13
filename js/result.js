@@ -14,7 +14,7 @@ const numeroRisposte = function () {
 numeroRisposte();
 
 const risultatoTest = function () {
-  const risposteCorrette = [1, 1, 1, 1];
+  const risposteCorrette = [1, 1, 1, 1, 1, 1];
   const risposteErrate = [1, 1, 1, 1, 1, 1];
 
   const h3Circle1 = document.getElementById("h3Circle1");
@@ -25,7 +25,7 @@ const risultatoTest = function () {
     h3Circle1.innerText = "Congratulations!";
     h3Circle2.innerText = "You passed the exam.";
     pCircle.innerText =
-      "We'll send you the certificate in few minutes.Ceck your email (including promotions / spam folder)";
+      "We'll send you the certificate in few minutes.        Check your email (including promotions / spam folder)";
   } else {
     h3Circle1.innerText = "I'm sorry";
     h3Circle2.innerText = "You not passed the exam.";
@@ -47,7 +47,6 @@ const conteggioRisposte = function () {
   let etichette = ["errate", "corrette"];
   let data = [risposteErratePercentuale / 10, risposteEsattePercentuale / 10];
 
-  // Chart.default.global.defaultradius = "20%";
   let color = ["#D20094", "#00FFFF"];
   const ciambella = new Chart(canvas, {
     type: "doughnut",
@@ -56,6 +55,7 @@ const conteggioRisposte = function () {
 
       datasets: [
         {
+          borderWidth: 0,
           backgroundColor: color,
           data: data,
         },
@@ -64,11 +64,13 @@ const conteggioRisposte = function () {
     options: {
       cutoutPercentage: 70,
       radius: "90%",
+
       legend: {
         display: false,
       },
     },
   });
+
   return ciambella;
 };
 
