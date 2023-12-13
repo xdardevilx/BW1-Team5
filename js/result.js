@@ -1,19 +1,19 @@
 console.log(window.location.href);
-const risposteCorrette = [1, 1, 1, 1];
-const risposteErrate = [1, 1, 1, 1, 1, 1];
-const numeroRisposte = function () {
+const risposteCorrette = [1, 1, 1, 1, 1, 1, 1];
+
+const numeroRisposte = function (correct) {
   const correctP = document.getElementById("correctQuestions");
   const wrongP = document.getElementById("wrongQuestions");
-  const correctLength = risposteCorrette.length + "/10 questions";
-  const wrongLength = risposteErrate.length + "/10 questions";
+  const correctLength = correct.length + "/10 questions";
+  const wrongLength = 10 - parseInt(correctLength) + "/10 questions";
 
   correctP.innerText = correctLength;
   wrongP.innerText = wrongLength;
 };
 
-numeroRisposte();
+numeroRisposte(risposteCorrette);
 
-const risultatoTest = function () {
+const risultatoTest = function (correct) {
   const risposteCorrette = [1, 1, 1, 1, 1, 1];
   const risposteErrate = [1, 1, 1, 1, 1, 1];
 
@@ -21,7 +21,7 @@ const risultatoTest = function () {
   const h3Circle2 = document.getElementById("h3Circle2");
   const pCircle = document.getElementById("pCircle");
 
-  if (risposteCorrette.length >= 5) {
+  if (correct.length >= 5) {
     h3Circle1.innerText = "Congratulations!";
     h3Circle2.innerText = "You passed the exam.";
     pCircle.innerText =
@@ -33,15 +33,15 @@ const risultatoTest = function () {
   }
 };
 
-risultatoTest();
+risultatoTest(risposteCorrette);
 
-const conteggioRisposte = function () {
-  const risposteEsattePercentuale = risposteCorrette.length * 10;
-  const risposteErratePercentuale = risposteErrate.length * 10;
+const conteggioRisposte = function (correct) {
+  const risposteEsattePercentuale = correct.length * 10;
+  const risposteErratePercentuale = 100 - risposteEsattePercentuale;
   const percentualeCorrette = document.getElementById("correct");
   const percentualeErrate = document.getElementById("wrong");
-  percentualeCorrette.innerText = `${risposteErratePercentuale} %`;
-  percentualeErrate.innerText = `${risposteEsattePercentuale} %`;
+  percentualeCorrette.innerText = `${risposteEsattePercentuale} %`;
+  percentualeErrate.innerText = `${risposteErratePercentuale} %`;
   const canvas = document.getElementById("graficoCiambella");
 
   let etichette = ["errate", "corrette"];
@@ -74,4 +74,4 @@ const conteggioRisposte = function () {
   return ciambella;
 };
 
-conteggioRisposte();
+conteggioRisposte(risposteCorrette);
