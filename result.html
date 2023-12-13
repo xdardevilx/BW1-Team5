@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/general.css" />
+    <link rel="stylesheet" href="/assets/css/result.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/assets/img/epicode_logo.png" alt="epicode_logo" />
+    </header>
+    <main>
+      <div class="center">
+        <h1 id="firsth1">Results</h1>
+        <p>The summary of your answers:</p>
+      </div>
+
+      <section>
+        <article class="dimension">
+          <div>
+            <h1 class="h1Article">Correct</h1>
+            <h1 id="correct"></h1>
+            <p id="correctQuestions">5/6 question</p>
+          </div>
+        </article>
+
+        <article class="dimension" id="canvas-content">
+          <canvas id="graficoCiambella">
+            <h3 id="h3Circle1"></h3>
+            <h3 id="h3Circle2"></h3>
+            <p id="pCircle"></p>
+          </canvas>
+        </article>
+
+        <article class="dimension">
+          <div>
+            <h1 class="h1Article">Wrong</h1>
+            <h1 id="wrong"></h1>
+            <p id="wrongQuestions">2/3 questions</p>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <button>RATE US</button>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./js/result.js"></script>
+  </body>
+</html>
