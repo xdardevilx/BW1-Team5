@@ -1,5 +1,5 @@
 console.log(window.location.href);
-const risposteCorrette = [1, 1, 1, 1, 1, 1, 1];
+const risposteCorrette = [1, 1];
 
 const numeroRisposte = function (correct) {
   const correctP = document.getElementById("correctQuestions");
@@ -14,14 +14,11 @@ const numeroRisposte = function (correct) {
 numeroRisposte(risposteCorrette);
 
 const risultatoTest = function (correct) {
-  const risposteCorrette = [1, 1, 1, 1, 1, 1];
-  const risposteErrate = [1, 1, 1, 1, 1, 1];
-
   const h3Circle1 = document.getElementById("h3Circle1");
   const h3Circle2 = document.getElementById("h3Circle2");
   const pCircle = document.getElementById("pCircle");
 
-  if (correct.length >= 5) {
+  if (correct.length > 5) {
     h3Circle1.innerText = "Congratulations!";
     h3Circle2.innerText = "You passed the exam.";
     pCircle.innerText =
@@ -44,7 +41,7 @@ const conteggioRisposte = function (correct) {
   percentualeErrate.innerText = `${risposteErratePercentuale} %`;
   const canvas = document.getElementById("graficoCiambella");
 
-  let etichette = ["errate", "corrette"];
+  let etichette = ["Risposte Errate", "Risposte Corrette"];
   let data = [risposteErratePercentuale / 10, risposteEsattePercentuale / 10];
 
   let color = ["#D20094", "#00FFFF"];
