@@ -22,63 +22,32 @@
     <main>
       <section>
         <article id="domande">
-          <p>
+          <!--           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
             asperiores assumenda ad similique ratione voluptatum? Vero alias
             cumque fugiat tempore asperiores quaerat adipisci dignissimos,
             repudiandae culpa, veritatis possimus nesciunt expedita.
-          </p>
+          </p> -->
         </article>
-        <article id="risposte">
-          <div>
-            <label class="custom-radio">
-              <input type="radio" name="rb" value="risp1" />
-              <div class="radio-button"></div>
-              <span class="radio-label"> scrivere una risposta </span>
-            </label>
-            <label class="custom-radio">
-              <input type="radio" name="rb" value="risp2" />
-              <div class="radio-button"></div>
-              <span class="radio-label"> scrivere una risposta </span>
-            </label>
-          </div>
-          <div>
-            <label class="custom-radio">
-              <input type="radio" name="rb" value="risp3" />
-              <div class="radio-button"></div>
-              <span class="radio-label"> scrivere una risposta </span>
-            </label>
-            <label class="custom-radio">
-              <input type="radio" name="rb" value="risp4" />
-              <div class="radio-button"></div>
-              <span class="radio-label"> scrivere una risposta </span>
-            </label>
-          </div>
-          <div>
-            <button class="btn-primary">PROCEDI</button>
-          </div>
+        <article id="risposte">        
         </article>
+        <div>
+          <button class="btn-primary" onclick="mostraProssimaDomanda()">
+            PROCEDI
+          </button>
+        </div>
         <article id="conteggio-domande">
           <h4>
-            QUESTION <span id="cont-domande">1</span
-            ><span id="num-domande">/10</span>
+            QUESTION
+            <span id="indice-domanda"></span>
+            <span id="num-domande">/10</span>
           </h4>
         </article>
-      </section>
-      <script>
-        const countdownDate = new Date().getTime() + 30000;
-        const x = setInterval(function () {
-          const now = new Date().getTime();
-          const distance = countdownDate - now;
-          const seconds = Math.floor(distance / 1000);
-          document.getElementById("seconds").innerHTML = seconds;
-          if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("seconds").innerHTML = "0";
-          }
-        }, 1000);
-      </script>
+      </section>   
     </main>
-    <footer></footer>
+    <footer></footer> 
+
+    <script src="./js/benchmark.js"></script>
+   <script src="./js/time.js"></script> 
   </body>
-</html>
+  </html>
