@@ -6,6 +6,7 @@ const x = setInterval(function () {
   document.getElementById("seconds").innerHTML = seconds;
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("seconds").innerHTML = "0";
+    document.getElementById("seconds").innerHTML = mostraProssimaDomanda();
   }
+  x();
 }, 1000);
