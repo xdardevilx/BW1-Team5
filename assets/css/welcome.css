@@ -22,7 +22,7 @@ h1 {
 }
 
 #exam { 
-  font-weight: bold;
+  font-weight: 400;
   /* font-family: 'Courier New', Courier, monospace; */
 }
 
@@ -35,13 +35,17 @@ h1 {
   font-size: 30px;
   color: #900080;
   font-family: "Outfit";
+  padding-bottom: 10px;
 }
 
 #paragrafo1 {
   color: white;
   font-size: 16px;
   font-family: "Inter";
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+  display: inline-block;
+  width: 500px;
+  line-height: 1.3em;
 }
 
 .container2 {
@@ -53,10 +57,12 @@ h1 {
 
 strong {
   font-size: 1.025em;
+  /* height: 1.3em; */
 }
 
 ul {
   padding-left: 20px;
+  line-height: 1.3em;
 }
 
 .container3 {

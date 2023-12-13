@@ -5,7 +5,7 @@ body {
 }
 .center {
   text-align: center;
-  margin-bottom: 4.5em;
+  margin-bottom: 2.5em;
 }
 img {
   width: 15%;
@@ -20,24 +20,29 @@ section {
   display: flex;
   justify-content: center;
 }
-
-#circleDiv {
-  background-color: rgb(101, 208, 119);
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
+.h1Article {
+  font-weight: 400;
 }
 
-#correct {
+/* #correct {
 }
 #correctQuestions {
-}
+} */
+/* valore percentuale wrong */
 #wrong {
-  padding-left: 1.2em;
+  padding-left: 1em;
 }
+/* id risposte esatte/sbagliate */
 #wrongQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+  padding-left: 2.2em;
 }
-
+#correctQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+/* classi article */
 .dimension {
   /* width: 33.3%; */
   display: flex;
@@ -47,7 +52,7 @@ section {
 
 footer {
   text-align: center;
-  margin-top: 5em;
+  margin-top: 2em;
   color: white;
 }
 button {
@@ -64,8 +69,7 @@ button {
 
 canvas {
   display: inline-block;
-  width: 550px;
-  height: 550px;
+  border: #00ffff;
 
   /* background-color: aliceblue; */
 }
@@ -93,13 +97,20 @@ canvas {
 
 .text-container h3 {
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 .text-container p {
-  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
   max-width: 87%;
+  font-weight: 100;
   opacity: 0.8;
   text-align: center;
   padding-left: 1.5rem;
   padding-top: 0.5rem;
+}
+
+#h3Circle2 {
+  color: #00ffff;
+  margin-bottom: 20px;
 }
