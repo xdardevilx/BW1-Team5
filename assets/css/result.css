@@ -20,32 +20,45 @@ section {
   display: flex;
   justify-content: center;
 }
-
-#circleDiv {
-  background-color: rgb(101, 208, 119);
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
+.h1Article {
+  font-weight: 400;
 }
-#h3Circle1 {
+
+#canvas-content {
   display: flex;
+  flex-direction: column;
+}
+/* descrizione dentro canvas */
+#h3Circle1 {
+  font-size: 22px;
+  font-weight: 400;
 }
 #h3Circle2 {
-  display: flex;
+  font-size: 22px;
+  color: #00ffff;
+  font-weight: 400;
+  margin-bottom: 1em;
 }
 #pCircle {
-  display: flex;
+  font-size: 15px;
+  max-width: 205px;
+  opacity: 0.8;
 }
-#correct {
-}
-#correctQuestions {
-}
+/* valore percentuale wrong */
 #wrong {
   padding-left: 1.2em;
 }
+/* id risposte esatte/sbagliate */
 #wrongQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+  padding-left: 2.2em;
 }
-
+#correctQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+/* classi article */
 .dimension {
   /* width: 33.3%; */
   display: flex;
@@ -55,12 +68,13 @@ section {
 
 footer {
   text-align: center;
-  margin-top: 5em;
+  margin-top: 2em;
   color: white;
 }
 button {
+  border-width: 0.2cap;
   border-color: white;
-  background-color: blueviolet;
+  background: none;
   height: 70px;
   width: 250px;
 }
