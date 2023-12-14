@@ -177,8 +177,7 @@ const mostraProssimaDomanda = function () {
     mostraRisposte(domandaCorrente, questions);
   } else if (domandaCorrente === questions.length) {
     // mostraDomanda(domandaCorrente, questions);
-    navigazioneInResultPagina();
-
+    simulaCaricamento();
     console.log(risultati(questions));
   }
 };
@@ -223,6 +222,19 @@ const navigazioneInResultPagina = function () {
     "&totaleDomande=" +
     parametro.numeroDomande;
 };
+function simulaCaricamento() {
+ 
+  var loadingDiv = document.getElementById("loading");
+  loadingDiv.style.display = "block";
+  
+  var loadingIcon = loadingDiv.querySelector(".fa-spinner");
+  loadingIcon.style.display = "inline-block";
+  
+  setTimeout(function () {
+    navigazioneInResultPagina();
+    loadingDiv.style.display = "none";
+  }, 2000);
+}
 
 // init
 mostraDomanda(domandaCorrente, questions);
