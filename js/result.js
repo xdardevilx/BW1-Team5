@@ -72,3 +72,9 @@ const conteggioRisposte = function (correct) {
 };
 
 conteggioRisposte(risposteCorrette);
+
+const buttonRateUs = document.getElementsByTagName("button")[0];
+buttonRateUs.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "./feedback.html";
+});
