@@ -1,24 +1,31 @@
-console.log(window.location.href);
-const risposteCorrette = [1, 1];
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+let risultato = urlParams.get("risultati");
+let domande = urlParams.get("totaleDomande");
+console.log(risultato, domande);
 
-const numeroRisposte = function (correct) {
+const risposteCorrette = parseInt(risultato);
+const domandeTotali = parseInt(domande);
+const numeroRisposte = function (correct, wrong) {
   const correctP = document.getElementById("correctQuestions");
   const wrongP = document.getElementById("wrongQuestions");
-  const correctLength = correct.length + "/10 questions";
-  const wrongLength = 10 - parseInt(correctLength) + "/10 questions";
+  const correctLength = correct + "/" + wrong + " questions";
+  const wrongLength =
+    wrong - parseInt(correctLength) + "/" + wrong + " questions";
 
   correctP.innerText = correctLength;
   wrongP.innerText = wrongLength;
 };
 
-numeroRisposte(risposteCorrette);
+numeroRisposte(risposteCorrette, domandeTotali);
 
-const risultatoTest = function (correct) {
+const risultatoTest = function (correct, wrong) {
   const h3Circle1 = document.getElementById("h3Circle1");
   const h3Circle2 = document.getElementById("h3Circle2");
   const pCircle = document.getElementById("pCircle");
 
-  if (correct.length > 5) {
+  if (correct > wrong / 2) {
     h3Circle1.innerText = "Congratulations!";
     h3Circle2.innerText = "You passed the exam.";
     pCircle.innerText =
@@ -30,10 +37,10 @@ const risultatoTest = function (correct) {
   }
 };
 
-risultatoTest(risposteCorrette);
+risultatoTest(risposteCorrette, domandeTotali);
 
-const conteggioRisposte = function (correct) {
-  const risposteEsattePercentuale = correct.length * 10;
+const conteggioRisposte = function (correct, wrong) {
+  const risposteEsattePercentuale = Math.floor((correct / wrong) * 100);
   const risposteErratePercentuale = 100 - risposteEsattePercentuale;
   const percentualeCorrette = document.getElementById("correct");
   const percentualeErrate = document.getElementById("wrong");
@@ -71,4 +78,10 @@ const conteggioRisposte = function (correct) {
   return ciambella;
 };
 
-conteggioRisposte(risposteCorrette);
+conteggioRisposte(risposteCorrette, domandeTotali);
+
+const buttonRateUs = document.getElementsByTagName("button")[0];
+buttonRateUs.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "./feedback.html";
+});

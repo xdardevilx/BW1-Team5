@@ -220,7 +220,7 @@ const navigazioneInResultPagina = function () {
     "./result.html" +
     "?risultati=" +
     parametro.punti +
-    "?totaleDomande=" +
+    "&totaleDomande=" +
     parametro.numeroDomande;
 };
 
