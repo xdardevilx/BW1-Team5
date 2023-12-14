@@ -222,6 +222,7 @@ const navigazioneInResultPagina = function () {
     "&totaleDomande=" +
     parametro.numeroDomande;
 };
+
 function simulaCaricamento() {
   var loadingDiv = document.getElementById("loading");
   loadingDiv.style.display = "block";
