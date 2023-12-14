@@ -1,3 +1,28 @@
+const canvas = new CanvasCircularCountdown(
+  document.getElementById("countdown-canvas"),
+  {
+    duration: 30000,
+    elapsedTime: 0,
+    clockwise: false,
+    radius: 80,
+    progressBarWidth: 15,
+    progressBarOffset: 5,
+    circleBackgroundColor: "#6e2a72",
+    emptyProgressBarBackgroundColor: "#9a6a9e",
+    filledProgressBarBackgroundColor: "#00ffff",
+    showCaption: false,
+    captionColor: "#343a40",
+    captionFont: "20px sans-serif",
+  }
+).start();
+
+const reset = function onStartClicked() {
+  canvas.reset();
+};
+const restart = function onStartClicked() {
+  canvas.start();
+};
+
 let intervalloTimer = null;
 let tempoRimanente = 30;
 const startTimer = function () {
@@ -8,17 +33,15 @@ const startTimer = function () {
     const now = new Date().getTime();
     const distance = countdownDate - now;
     let seconds = Math.floor(distance / 1000);
-    console.log(seconds);
     document.getElementById("seconds").innerHTML = seconds;
     if (distance < 0) {
       clearInterval(intervalloTimer);
       document.getElementById("seconds").innerText = mostraProssimaDomanda();
       document.getElementById("seconds").innerText = "30";
-      countdownDate = new Date().getTime() + 30000;
+      countdownDate = new Date().getTime() + 31000;
       startTimer();
-    } else {
-      const progress = ((30000 - distance) / 30000) * 100;
-      barra.style.borderColor = "#9a6a9e";
+      reset();
+      restart();
     }
   }, 1000);
 };

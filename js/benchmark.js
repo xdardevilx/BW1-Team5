@@ -174,6 +174,9 @@ const mostraProssimaDomanda = function () {
     mostraDomanda(domandaCorrente, questions);
     contatoreIndiceDomanda(domandaCorrente, questions);
     mostraRisposte(domandaCorrente, questions);
+    startTimer();
+    reset();
+    restart();
   } else if (domandaCorrente === questions.length) {
     // mostraDomanda(domandaCorrente, questions);
     navigazioneInResultPagina();
