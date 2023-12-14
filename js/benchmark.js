@@ -202,10 +202,10 @@ const prendiValoreRadioButton = function (idDomanda) {
 };
 
 const risultati = function (listaDomande) {
-  let punti = 0;
+  let punti = 1;
   const totalePuntiDomande = {};
-  risposteSelezionate.forEach((e) => {
-    if (e.rispostaData === listaDomande[e.idDomanda].correct_answer) {
+  risposteSelezionate.forEach((risposta, indice) => {
+    if (risposta.rispostaData === listaDomande[indice].correct_answer) {
       punti++;
     }
   });
