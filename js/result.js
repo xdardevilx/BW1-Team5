@@ -1,10 +1,14 @@
-console.log(window.location.href);
-const risposteCorrette = [1, 1];
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+let risultato = urlParams.get("risultati");
+console.log(typeof risultato);
 
+const risposteCorrette = parseInt(risultato);
 const numeroRisposte = function (correct) {
   const correctP = document.getElementById("correctQuestions");
   const wrongP = document.getElementById("wrongQuestions");
-  const correctLength = correct.length + "/10 questions";
+  const correctLength = correct + "/10 questions";
   const wrongLength = 10 - parseInt(correctLength) + "/10 questions";
 
   correctP.innerText = correctLength;
@@ -18,7 +22,7 @@ const risultatoTest = function (correct) {
   const h3Circle2 = document.getElementById("h3Circle2");
   const pCircle = document.getElementById("pCircle");
 
-  if (correct.length > 5) {
+  if (correct > 5) {
     h3Circle1.innerText = "Congratulations!";
     h3Circle2.innerText = "You passed the exam.";
     pCircle.innerText =
@@ -33,7 +37,7 @@ const risultatoTest = function (correct) {
 risultatoTest(risposteCorrette);
 
 const conteggioRisposte = function (correct) {
-  const risposteEsattePercentuale = correct.length * 10;
+  const risposteEsattePercentuale = correct * 10;
   const risposteErratePercentuale = 100 - risposteEsattePercentuale;
   const percentualeCorrette = document.getElementById("correct");
   const percentualeErrate = document.getElementById("wrong");
