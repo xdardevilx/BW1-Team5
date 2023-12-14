@@ -169,6 +169,7 @@ const mostraRisposte = function (idDomanda, listaDomande) {
 };
 
 const mostraProssimaDomanda = function () {
+  domandaCorrente++;
   if (domandaCorrente < questions.length) {
     prendiValoreRadioButton(domandaCorrente);
     mostraDomanda(domandaCorrente, questions);
@@ -180,7 +181,6 @@ const mostraProssimaDomanda = function () {
 
     console.log(risultati(questions));
   }
-  domandaCorrente++;
 };
 
 const prendiValoreRadioButton = function (idDomanda) {
@@ -202,19 +202,28 @@ const prendiValoreRadioButton = function (idDomanda) {
 };
 
 const risultati = function (listaDomande) {
-  let punti = 0;
-  risposteSelezionate.forEach((e) => {
-    if (e.rispostaData === listaDomande[e.idDomanda].correct_answer) {
+  let punti = 1;
+  const totalePuntiDomande = {};
+  risposteSelezionate.forEach((risposta, indice) => {
+    if (risposta.rispostaData === listaDomande[indice].correct_answer) {
       punti++;
     }
   });
-  return punti;
+  totalePuntiDomande.punti = punti;
+  totalePuntiDomande.numeroDomande = listaDomande.length;
+  return totalePuntiDomande;
 };
 
 const navigazioneInResultPagina = function () {
   let parametro = risultati(questions);
-  window.location.href = "./result.html" + "?risultati=" + parametro;
+  window.location.href =
+    "./result.html" +
+    "?risultati=" +
+    parametro.punti +
+    "?totaleDomande=" +
+    parametro.numeroDomande;
 };
+
 // init
 mostraDomanda(domandaCorrente, questions);
 contatoreIndiceDomanda(domandaCorrente, questions);
