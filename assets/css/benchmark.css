@@ -5,10 +5,6 @@ html {
 }
 
 header {
-  /*   display: flex;
-  flex-direction: row; */
-  /* align-items: right;
-  justify-content: right; */
   min-height: 10vh;
   margin: 0;
 }
@@ -170,7 +166,6 @@ main {
   margin-left: auto;
   margin-right: 20px;
 }
-
 .text-container {
   position: absolute;
   top: 50%;
