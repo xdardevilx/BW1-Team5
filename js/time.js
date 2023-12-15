@@ -36,7 +36,7 @@ const startTimer = function () {
     document.getElementById("seconds").innerHTML = seconds;
     if (distance < 0) {
       clearInterval(intervalloTimer);
-      document.getElementById("seconds").innerText = mostraProssimaDomanda();
+      document.getElementById("seconds").innerText = mostraProssimaDomanda(domandeFiltrate());
       document.getElementById("seconds").innerText = "30";
       countdownDate = new Date().getTime() + 31000;
       startTimer();

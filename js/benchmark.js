@@ -97,6 +97,7 @@ const questions = [
 let domandaCorrente = 0;
 
 const risposteSelezionate = [];
+
 // funzione crea domande
 const mostraDomanda = function (idDomanda, listaDomande) {
   const domandeContainer = document.getElementById("domande");
@@ -169,7 +170,12 @@ const mostraRisposte = function (idDomanda, listaDomande) {
 };
 
 const mostraProssimaDomanda = function (listaDomande) {
+  /// Controllo [listaDomande] se è valorizzato o no e fa emergergere un messaggio personalizzato
+  if (!listaDomande) {
+    throw new Error("listaDomande is required parameters.");
+  }
   domandaCorrente++;
+  console.log("listaDomande ", listaDomande);
   if (domandaCorrente < listaDomande.length) {
     prendiValoreRadioButton(domandaCorrente);
     mostraDomanda(domandaCorrente, listaDomande);
@@ -179,9 +185,7 @@ const mostraProssimaDomanda = function (listaDomande) {
     reset();
     restart();
   } else if (domandaCorrente === listaDomande.length) {
-    // mostraDomanda(domandaCorrente, questions);
     simulaCaricamento();
-    console.log(risultati(listaDomande));
   }
 };
 
@@ -198,9 +202,7 @@ const prendiValoreRadioButton = function (idDomanda) {
     r.rispostaData = null;
   }
 
-  console.log(r);
   risposteSelezionate.push(r);
-  console.log(risposteSelezionate);
 };
 
 const risultati = function (listaDomande) {
@@ -254,6 +256,7 @@ const domandeFiltrate = () => {
   console.log(domandeFiltrate);
   return domandeFiltrate;
 };
+
 // init
 mostraDomanda(domandaCorrente, domandeFiltrate());
 contatoreIndiceDomanda(domandaCorrente, domandeFiltrate());
