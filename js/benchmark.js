@@ -117,7 +117,7 @@ const contatoreIndiceDomanda = function (idDomanda, listaDomande) {
   const indiceDomanda = document.getElementById("indice-domanda");
   const totDomande = document.getElementById("num-domande");
 
-  totDomande.innerHTML = "/" + listaDomande.length;
+  totDomande.innerHTML = "/" + (listaDomande.length - 3);
   if (idDomanda < listaDomande.length) {
     indiceDomanda.innerHTML = idDomanda + 1;
   }
@@ -236,7 +236,7 @@ function simulaCaricamento() {
   setTimeout(function () {
     navigazioneInResultPagina();
     loadingDiv.style.display = "none";
-  }, 2000);
+  }, 7000);
 }
 
 // init
