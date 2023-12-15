@@ -180,8 +180,7 @@ const mostraProssimaDomanda = function () {
     restart();
   } else if (domandaCorrente === questions.length) {
     // mostraDomanda(domandaCorrente, questions);
-    navigazioneInResultPagina();
-
+    simulaCaricamento();
     console.log(risultati(questions));
   }
 };
@@ -205,7 +204,7 @@ const prendiValoreRadioButton = function (idDomanda) {
 };
 
 const risultati = function (listaDomande) {
-  let punti = 1;
+  let punti = 0;
   const totalePuntiDomande = {};
   risposteSelezionate.forEach((risposta, indice) => {
     if (risposta.rispostaData === listaDomande[indice].correct_answer) {
@@ -226,6 +225,19 @@ const navigazioneInResultPagina = function () {
     "&totaleDomande=" +
     parametro.numeroDomande;
 };
+
+function simulaCaricamento() {
+  var loadingDiv = document.getElementById("loading");
+  loadingDiv.style.display = "block";
+
+  var loadingIcon = loadingDiv.querySelector(".fa-spinner");
+  loadingIcon.style.display = "inline-block";
+
+  setTimeout(function () {
+    navigazioneInResultPagina();
+    loadingDiv.style.display = "none";
+  }, 2000);
+}
 
 // init
 mostraDomanda(domandaCorrente, questions);
