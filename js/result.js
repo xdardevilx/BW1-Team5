@@ -32,7 +32,7 @@ const risultatoTest = function (correct, wrong) {
       "We'll send you the certificate in few minutes.        Check your email (including promotions / spam folder)";
   } else {
     h3Circle1.innerText = "I'm sorry";
-    h3Circle2.innerText = "You not passed the exam.";
+    h3Circle2.innerText = "You did not passed the exam.";
     pCircle.innerText = "You must repete the exam.";
   }
 };
