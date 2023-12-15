@@ -117,7 +117,7 @@ const contatoreIndiceDomanda = function (idDomanda, listaDomande) {
   const indiceDomanda = document.getElementById("indice-domanda");
   const totDomande = document.getElementById("num-domande");
 
-  totDomande.innerHTML = "/" + (listaDomande.length - 3);
+  totDomande.innerHTML = "/" + listaDomande.length;
   if (idDomanda < listaDomande.length) {
     indiceDomanda.innerHTML = idDomanda + 1;
   }
