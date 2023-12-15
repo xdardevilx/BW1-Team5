@@ -1,0 +1,103 @@
+body {
+  color: rgb(211, 230, 220);
+  font-family: "Outfit", sans-serif;
+  font-size: 2em;
+}
+.center {
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+img {
+  width: 15%;
+  margin-top: 40px;
+  margin-left: 95px;
+}
+h1 {
+  font-size: 60px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+.h1Article {
+  font-weight: 400;
+}
+
+#wrong {
+  padding-left: 1em;
+}
+
+#wrongQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+  padding-left: 2.2em;
+}
+#correctQuestions {
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+
+.dimension {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2em;
+  color: white;
+}
+button {
+  border-width: 0.2cap;
+  border-color: white;
+  background: none;
+  height: 70px;
+  width: 260px;
+  font-size: 25px;
+  font-weight: 700;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 60px;
+}
+
+canvas {
+  display: inline-block;
+  border: #00ffff;
+}
+
+#container {
+  position: relative;
+  width: 700px;
+  height: 500px;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-container h3 {
+  color: white;
+  font-size: 1.8rem;
+  padding-bottom: 0.25rem;
+}
+.text-container p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  max-width: 87%;
+  font-weight: 100;
+  opacity: 0.8;
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+#h3Circle2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+}
