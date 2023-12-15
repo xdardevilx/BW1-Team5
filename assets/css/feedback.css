@@ -1,5 +1,5 @@
-body{
-    width: 100vw;
+body {
+  width: 100vw;
 }
 
 /* #logoimg{
@@ -7,103 +7,91 @@ body{
     margin-left: 150px;
     margin-top: 50px;
 } */
-#title-subtitle h1{
-    color: white;
-    font-family: 'Outfit', sans-serif;
-    font-size: 60px;
-    text-align: center;
-    margin-top: 6%;
+#title-subtitle h1 {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 6%;
 }
-#title-subtitle p{
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 26px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-    margin-top: 20px;
-    line-height: 1.6em;
+#title-subtitle p {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 20px;
+  line-height: 1.6em;
 }
-#stars{
-text-align: center;
-margin-top: 20px;
+#stars {
+  text-align: center;
+  margin-top: 20px;
 }
-#stars :hover{
-    color: #00FFFF;
-    opacity: 1;
-
+#stars :hover {
+  color: #00ffff;
+  opacity: 1;
 }
-.star{
-    display: inline-block;
+.star {
+  display: inline-block;
 }
 
-
-i{
-font-size: 50px;
-color: black;
-opacity: 0.4;
-cursor: pointer;
-  
+i {
+  font-size: 50px;
+  color: black;
+  opacity: 0.4;
+  cursor: pointer;
 }
-.clicked{
-    color: #00FFFF;
-    opacity: 1;
-   
+.clicked {
+  color: #00ffff;
+  opacity: 1;
 }
-#form p{
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 26px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
+#form p {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 
-    line-height: 1.6em;
-
-
-
+  line-height: 1.6em;
 }
-#textArea{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-
+#textArea {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
-textarea{
-    width: 100%;
-    resize: none;
-    background: none;
-    border-width: 0 0 2px;
-    border-color: #D20094;
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-
+textarea {
+  width: 100%;
+  resize: none;
+  background: none;
+  border-width: 0 0 2px;
+  border-color: #d20094;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
 }
 textarea::placeholder {
-    font-size: 20px;
-  }
-
-#button{
-    width: 20%;
-    height: 80px;
-    text-align: center;
-    margin-top: 100px;
-    font-weight: 700;
-    font-family: "Inter", sans-serif;
-    font-size: 1.6em;
-    background-color: #00FFFF;
-    box-shadow: 2px 2px 19px 6px #00FFFF;
-    border: none;
-    cursor: pointer;
-      
-}
-#buttonDiv{
-
-text-align: center;
-
+  font-size: 20px;
 }
 
+#button {
+  width: 20%;
+  height: 80px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6em;
+  background-color: #00ffff;
+  box-shadow: 2px 2px 19px 6px #00ffff;
+  border: none;
+  cursor: pointer;
+}
+#buttonDiv {
+  text-align: center;
+}
