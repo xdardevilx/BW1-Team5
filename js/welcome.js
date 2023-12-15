@@ -1,25 +1,34 @@
 const select = document.getElementById('dif')
 
+let numeroDomande = 0
+
 const controlloDifficoltà = function() {
   if (select.value === 'hard') {
-    let numeroDomande = 10
-    return numeroDomande
+     numeroDomande = 10
+    
   }
   else if (select.value === 'medium') {
-    let numeroDomande = 7
-    return numeroDomande
+     numeroDomande = 7
+    
   }
   else   {
-    let numeroDomande = 5
-    return numeroDomande
+     numeroDomande = 5
+    
   }
+  return numeroDomande
 }
 
-const formReference = document.getElementsByTagName('form')[1]
+
+
+const navigaBenchmark = function() {
+  const formReference = document.getElementsByTagName('form')[1]
 formReference.addEventListener('submit', function (e) {
   e.preventDefault()
   console.log(select.value)
   controlloDifficoltà()
-  window.location.href = './benchmark.html'+'?domande ='+ controlloDifficoltà()
+  console.log(controlloDifficoltà())
+  window.location.href = './benchmark.html'+'?domande='+ numeroDomande
 })
+}
+navigaBenchmark()
 
