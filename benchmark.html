@@ -21,9 +21,7 @@
       </div>
       <div>
         <div id="container">
-          <canvas
-            id="countdown-canvas"
-            style="width: 50px; height: 50px"></canvas>
+          <canvas id="countdown-canvas"></canvas>
           <div class="text-container">
             <div class="countdownLabel">Rimanenti</div>
             <div class="countdownItem" id="seconds">30</div>
@@ -37,7 +35,9 @@
         <article id="domande"></article>
         <article id="risposte"></article>
         <div id="btn">
-          <button class="btn-primary" onclick="mostraProssimaDomanda()">
+          <button
+            class="btn-primary"
+            onclick="mostraProssimaDomanda(domandeFiltrate())">
             PROCEED
           </button>
         </div>
@@ -51,8 +51,8 @@
       </section>
       <div id="loading">
         <p>
-          Caricamento...se hai risposto male, disonore su di te sulla tua
-          famiglia e sulla tua mucca <i class="fas fa-spinner fa-spin"></i>
+          Caricamento...se hai risposto male, disonore su di te, sulla tua
+          famiglia e sulla tua mucca! <i class="fas fa-spinner fa-spin"></i>
         </p>
       </div>
     </main>

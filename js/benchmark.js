@@ -168,20 +168,20 @@ const mostraRisposte = function (idDomanda, listaDomande) {
   }
 };
 
-const mostraProssimaDomanda = function () {
+const mostraProssimaDomanda = function (listaDomande) {
   domandaCorrente++;
-  if (domandaCorrente < questions.length) {
+  if (domandaCorrente < listaDomande.length) {
     prendiValoreRadioButton(domandaCorrente);
-    mostraDomanda(domandaCorrente, questions);
-    contatoreIndiceDomanda(domandaCorrente, questions);
-    mostraRisposte(domandaCorrente, questions);
+    mostraDomanda(domandaCorrente, listaDomande);
+    contatoreIndiceDomanda(domandaCorrente, listaDomande);
+    mostraRisposte(domandaCorrente, listaDomande);
     startTimer();
     reset();
     restart();
-  } else if (domandaCorrente === questions.length) {
+  } else if (domandaCorrente === listaDomande.length) {
     // mostraDomanda(domandaCorrente, questions);
     simulaCaricamento();
-    console.log(risultati(questions));
+    console.log(risultati(listaDomande));
   }
 };
 
@@ -216,8 +216,8 @@ const risultati = function (listaDomande) {
   return totalePuntiDomande;
 };
 
-const navigazioneInResultPagina = function () {
-  let parametro = risultati(questions);
+const navigazioneInResultPagina = function (listaDomande) {
+  let parametro = risultati(listaDomande);
   window.location.href =
     "./result.html" +
     "?risultati=" +
@@ -234,12 +234,27 @@ function simulaCaricamento() {
   loadingIcon.style.display = "inline-block";
 
   setTimeout(function () {
-    navigazioneInResultPagina();
+    navigazioneInResultPagina(domandeFiltrate());
     loadingDiv.style.display = "none";
-  }, 7000);
+  }, 1000);
 }
 
+const filtroDifficoltaDomanda = function () {
+  const ricerca = window.location.search;
+  const parametri = new URLSearchParams(ricerca);
+  const difficolta = parametri.get("domande");
+  return difficolta;
+};
+
+const domandeFiltrate = () => {
+  const domandeFiltrate = [];
+  for (let i = 0; i < filtroDifficoltaDomanda(); i++) {
+    domandeFiltrate.push(questions[i]);
+  }
+  console.log(domandeFiltrate);
+  return domandeFiltrate;
+};
 // init
-mostraDomanda(domandaCorrente, questions);
-contatoreIndiceDomanda(domandaCorrente, questions);
-mostraRisposte(domandaCorrente, questions);
+mostraDomanda(domandaCorrente, domandeFiltrate());
+contatoreIndiceDomanda(domandaCorrente, domandeFiltrate());
+mostraRisposte(domandaCorrente, domandeFiltrate());

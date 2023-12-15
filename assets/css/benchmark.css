@@ -138,6 +138,7 @@ main {
 }
 
 .countdownLabel {
+  font-family: "Outfit", sans-serif;
   font-size: 0.8em;
   color: #ffffff;
 }
@@ -164,6 +165,7 @@ main {
   float: right;
 }
 #container {
+  font-family: "Outfit", sans-serif;
   position: relative;
   width: 160px;
   height: 160px;
@@ -171,6 +173,7 @@ main {
   margin-right: 20px;
 }
 .text-container {
+  font-family: "Outfit", sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;

@@ -3,11 +3,11 @@ const canvas = new CanvasCircularCountdown(
   {
     duration: 30000,
     elapsedTime: 0,
-    clockwise: false,
+    clockwise: true,
     radius: 80,
     progressBarWidth: 15,
     progressBarOffset: 5,
-    circleBackgroundColor: "#6e2a72",
+    circleBackgroundColor: "#00000000",
     emptyProgressBarBackgroundColor: "#9a6a9e",
     filledProgressBarBackgroundColor: "#00ffff",
     showCaption: false,
