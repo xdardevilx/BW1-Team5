@@ -6,14 +6,14 @@ body {
   margin-right: auto;
   background-image: url(../img/bg.jpg);
 }
-
+/* 
 #logo {
-  /* width: 15%;
+  width: 15%;
   margin-top: 40px;
-  margin-left: 95px; */
+  margin-left: 95px;
   width: 150px;
   margin-top: 40px;
-}
+} */
 
 h1 {
   font-size: 60px;
