@@ -23,11 +23,11 @@ main {
 #imgDiv {
   display: inline;
 }
-#logo {
+/* #logo {
   width: 150px;
   margin-top: 30px;
   margin-left: 80px;
-}
+} */
 #sec-1 {
   margin-top: 30%;
 }
@@ -149,12 +149,16 @@ main {
   width: 100%;
   height: 100%;
   background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
   text-align: center;
   padding-top: 20%;
 }
 
 #loading p {
   font-size: 24px;
+  font-family: "Outfit", sans-serif;
+  color: white;
 }
 #canvas {
   float: right;
