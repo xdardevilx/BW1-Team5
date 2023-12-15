@@ -36,6 +36,7 @@ const envoyedText = function () {
     console.log(textValue);
     for (let i = 0; i < stars.length; i++) {
       stars[i].classList.remove("clicked");
+      window.location.href = "./welcome.html";
     }
     form.reset();
   });
