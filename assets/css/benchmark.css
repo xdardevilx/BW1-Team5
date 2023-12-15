@@ -1,39 +1,60 @@
 html {
-  max-width: 100%;
-  height: 100%;
+  width: 100%;
+  height: 700px;
   margin: 0 auto;
 }
+
+header {
+  /*   display: flex;
+  flex-direction: row; */
+  /* align-items: right;
+  justify-content: right; */
+  min-height: 10vh;
+  margin: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 500px;
+  max-height: 10vh;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+#imgDiv {
+  display: inline;
+}
 #logo {
-  display: inline-block;
   width: 150px;
   margin-top: 30px;
   margin-left: 80px;
 }
-#num-domande {
-  font-family: "Outfit", sans-serif;
-  color: #d20094;
+#sec-1 {
+  margin-top: 30%;
+}
+#domande,
+#risposte {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 800px;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 #domande {
-  text-align: center;
-  margin-top: 100px;
-  margin-right: 300px;
-  margin-left: 300px;
-  margin-bottom: 50px;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
   font-size: 40px;
   color: white;
 }
 #risposte {
-  text-align: center;
-  color: white;
   font-family: "Outfit", sans-serif;
-  font-size: 25px;
   font-weight: 400;
-  margin-top: 100px;
-  margin-right: 300px;
-  margin-left: 300px;
-  margin-bottom: 50px;
+  font-size: 25px;
+  color: white;
 }
 .custom-radio {
   display: inline-block;
@@ -42,6 +63,10 @@ html {
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 15px;
+}
+#num-domande {
+  font-family: "Outfit", sans-serif;
+  color: #d20094;
 }
 .custom-radio input {
   position: absolute;
@@ -70,6 +95,7 @@ html {
   color: white;
   font-size: 20px;
   word-spacing: 20px;
+  margin-bottom: 20px;
 }
 .btn-primary {
   color: black;
@@ -82,61 +108,72 @@ html {
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 700;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.time {
+.btn-primary:hover {
+  background-color: #00ccccc7;
+  box-shadow: 2px 2px 19px 6px #00ccccc7;
+  cursor: pointer;
+}
+
+#btn {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#progress {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
   display: inline-block;
   border: 15px solid #00ffff;
-  border-radius: 100%;
   margin: 50px;
 }
-.countdown-container {
-  display: inline-block;
+.countdownContainer {
   text-align: center;
   border-radius: 100%;
-  /* background-color: white; */
   padding: 20px;
 }
 
-.countdown-item {
-  display: inline-block;
+.countdownItem {
   margin: 0 10px;
   font-size: 2em;
   color: #ffffff;
 }
 
-.countdown-label {
+.countdownLabel {
   font-size: 0.8em;
   color: #ffffff;
 }
-/* #countdown-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #f2f2f2;
-  margin: 50px auto;
-}
-
-#countdown-bar {
-  position: absolute;
-  width: 160px;
-  height: 20px;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  background-color: #3498db;
-  transform-origin: 0 50%;
-  transform: rotate(0deg);
-}
-
-#countdown-text {
-  position: absolute;
+#loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-image: url(../img/bg.jpg);
   text-align: center;
-  line-height: 200px;
-  color: #2c3e50;
+  padding-top: 20%;
+}
+
+#loading p {
   font-size: 24px;
-  z-index: 2;
-} */
+}
+#canvas {
+  float: right;
+}
+#container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
