@@ -236,7 +236,7 @@ function simulaCaricamento() {
   setTimeout(function () {
     navigazioneInResultPagina();
     loadingDiv.style.display = "none";
-  }, 2000);
+  }, 7000);
 }
 
 // init
